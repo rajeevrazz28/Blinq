@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+  server:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+    environment:
+      - MONGODB_URI= mongodb+srv://r4zz:r4zz123@cluster0.g0dnjhz.mongodb.net/?retryWrites=true&w=majority&appName=cluster0
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo-data:

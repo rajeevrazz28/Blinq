@@ -1,0 +1,44 @@
+/* Main.css */
+.main-container {
+  padding: 2rem;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-item button {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+}
+
+.user-item button:hover {
+  background-color: #c82333;
+}
+
+.back-button {
+  margin-top: 2rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #6c757d;
+  color: white;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
